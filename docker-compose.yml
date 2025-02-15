@@ -35,24 +35,6 @@ services:
       - ./certs:/certs/client
       - ./data:/var/jenkins_home
 
-#openssl s_client -showcerts -connect localhost:5001 < /dev/null | sed -ne '/-BEGIN CERTIFICATE-/,/-END CERTIFICATE-/p' > ca.crt
-#cp ca.crt crts/ca.crt
-
-#Then inside the dind docker container
-#cp /certs/client/ca.crt /usr/share/ca-certificates/
-#update-ca-certificates
-#cp /certs/client/ca.crt /usr/share/ca-certificates/
-#docker pull host.docker.internal:5001/jdk
-#cp /certs/client/ca.crt /usr/local/share/ca-certificates/
-#update-ca-certificates
-#docker pull host.docker.internal:5001/jdk
-#vim /etc/docker/daemon/json
-#security add-trusted-cert
-#service docker restart
-#docker pull host.docker.internal:5001/jdk
-#history
-
-
 networks:
   jenkins-docker:
     driver: bridge
